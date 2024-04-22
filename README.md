@@ -33,49 +33,25 @@ The factor most responsible for the rapid evolution of neural networks into the 
 
 Today, Machine Learning is a widely adopted technology, powering everything from Instagram's and YouTube's suggestion algorithms, to the computer vision and pathfinding models behind navigation apps like Google Maps and Yandex Maps. Other notable use cases include audio processing models which remove background noise from audio (like Krisp, used by discord and nvidia Broadcast which works as a virtual input device) and computer vision models specialised for facial recognition, which is the technology powering snapchat's facial filters.
 
-## The AI boom
-The beginning of the 2020s saw a boom in the popularity of AI Models, with Models like OpenAI's DALL-E and ChatGPT, Meta's (formerly Facebook) LLaMA others becoming household names known to most people. Their explosive rise in popularity can be attributed to a long list of factors, including but not limited to:
+## The Advent of Generative AI
+The beginning of the 2020s saw a boom in the popularity of AI Generative AI models, with Models like OpenAI's DALL-E and ChatGPT, Meta's (formerly Facebook) LLaMA (among others) becoming household names. Their explosive rise to fame can be attributed to a long list of factors, including but not limited to:
 
 1. High performance
 2. Extensive training
 3. Ease of interaction
 4. Availability
 
-As mentioned previously, machine learning models have been a part of our daily lives for a while now, but they were never the primary attraction or product of any given platform or application developed for use by the general population. With the rise of Natural Language Processing Models, people were now able to interact directly with Machine Learning models with little abstraction, and more importantly, their ability to process natural language made them available to an enormous amount of people because they no longer required any programming expertise. These advancements allowed these models to go from working in the background for the sake of supporting an application or completing a specific task, to being the main product which can be used to perform a variety of tasks which can be completed using natural language. Note: programming is not natural language, but LLMs can easily be trained on code as well.
+As mentioned previously, machine learning models have been a part of our daily lives for a while now, but they were never the primary attraction or product of any given platform or application developed for use by the general population. With the rise of Natural Language Processing Models, people were now able to interact directly with Machine Learning models with little abstraction, and more importantly, their ability to process natural language made them available to an enormous amount of people because they no longer required any programming expertise. These advancements allowed these models to go from working in the background for the sake of supporting an application or completing a specific task, to being the main product which can be used to perform a variety of tasks which can be completed using natural language. Note: code is not natural language, but LLMs can easily be trained to read and write code as well.
 
-I will focus on LLMs (Large Language Models) like ChatGPT (Chat Generative Pre-trained Transformer) and LLaMA (Large Language Model Meta AI) for this section, as they are the most popular at the moment. For extra clarification, these models and others, like StableDiffusion based models and DALL-E, belong to the Generative AI group of AI models. Like the name might suggest, they exist to generate an output based on an input. ChatGPT and LLaMA are text-to-text models, meaning they generate output in the form of text generated from a text input. StableDiffusion and DALL-E models generate an image based on text input, making them text-to-image models.
+Regarding availability: Never before have Generative AI models been as easily accessible as today, with OpenAI's ChatGPT 3.5 being available for no cost at all as an example. Consumers are even given the option of running Generative AI models on their own machines, with [Ollama](https://www.ollama.com) being a popular option for storing, running, and interacting with many text-to-text models on your own machine. With many being compact enough to run very well on Laptops with no need for a GPU, Meta's LLaMA 2 being a perfect example thereof.
 
-Text-to-text LLMs exist to do one thing, predict to the best of their ability the word most likely to appear next in a sequence of words given to them as an Input, which is split into individual tokens. Each token has its own value (known as an embedding), with related words having values close to each other. This can be visualized in a 3D space using vectors:
+### LLMs and GPTs
+I will focus on LLMs (Large Language Models) like ChatGPT (Chat Generative Pre-trained Transformer) and LLaMA (Large Language Model Meta AI) for this section, as they are the most popular at the moment. For extra clarification, these models and others, like StableDiffusion based models and DALL-E, belong to the Generative AI group of AI models. As the name implies, they exist to generate an output based on an input. ChatGPT and LLaMA are text-to-text models, meaning they generate output in the form of text from a text input. StableDiffusion and DALL-E models generate an image based on text input, making them text-to-image models.
 
-```Python
-import numpy as np
-import matplotlib.pyplot as plt
+### Text-to-text Models and the birth of the AI assistant
+Text-to-text LLMs exist to do one thing, predict to the best of their ability the word most likely to appear next in a sequence of words given to them as an Input, which is split into individual tokens. Each token has its own embedding value, with related words having embedding values close to each other. This can be visualised in a 3D space using vectors [like I've done in this python notebook](https://colab.research.google.com/drive/1s4KNZgQsfOAxdo0wteSfJUTYylRVH7l3?usp=sharing).
 
-embeddings = {
-    "dog": [0.5, 0.3, -0.2],
-    "cat": [0.4, 0.2, -0.3],
-    "car": [-0.1, 0.6, 0.4],
-    "bike": [-0.2, 0.7, 0.5]
-}
-
-# Extract words and embeddings
-words = list(embeddings.keys())
-vectors = np.array([embeddings[word] for word in words])
-
-# Plot the 3D visualization
-fig = plt.figure(figsize=(10, 8))
-ax = fig.add_subplot(111, projection='3d')
-
-for word, vector in zip(words, vectors):
-    ax.text(vector[0], vector[1], vector[2], word)
-
-ax.set_xlabel('Dimension 1')
-ax.set_ylabel('Dimension 2')
-ax.set_zlabel('Dimension 3')
-
-plt.show()
-```
-
+![3D visualisation of vectors](embeddings-output.png)
 
 Using some creative prompt engineering, one can make the model act as a virtual assistant:
 
