@@ -2,7 +2,7 @@
 ###### *Author: Mikhail Sidorenko*
 ###### *2024*
 
-![this paper was brought to you by a healthy dose of fascination and cocaine](https://c.tenor.com/ZQ1uxb6lRjQAAAAC/tenor.gif)
+![](https://c.tenor.com/ZQ1uxb6lRjQAAAAC/tenor.gif)
 
 ---
 ## 1 The History of Neural Networks
@@ -143,7 +143,7 @@ Most AI assistants, depending on the prompt and what led up to the prompt, will 
 ## 3 What does a neural network look like?
 For those who enjoy having something to tinker with, this is a [superb 3D representation of a neural network](http://www.tensorblocks.com/) by the geniuses at [tensorflow](https://www.tensorflow.org/) (which actually works!) with an animated training process. This one specifically is a computer vision model which takes 28x28 pixel images of hand-drawn digits (which adds up to 784 input neurons) and outputs its best guess as to what digit it is via its 10 output neurons after feeding the data through multiple hidden layers. The brightest glowing output (or most active) output neuron is what this network "thinks" the digit provided is. I edited the default model to simplify it, here it is at work:
 
-![the coke in my sniff box holds no power over me, watch me](simple-cv-network.gif)
+![](simple-cv-network.gif)
 *this models shares the same structure as the model used by [3brown1blue](https://www.3blue1brown.com/) in his [course on neural networks](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&pp=iAQB) and uses the same dataset*
 
 ## 4 Let's build a neural network!
