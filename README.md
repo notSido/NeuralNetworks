@@ -68,6 +68,8 @@ Using some creative prompt engineering, one can make LLMs act as a virtual assis
 
 With this Prompt, the model does not pretend to be an assistant, instead it attempts to predict how this imaginary conversation between a user and assistant *could* unfold by predicting which words are most likely to follow, using *Assistant:* as a starting point. Very similar to how character's lines are written out in plays. It guesses which word is most likely to come next in accordance with its training, which consists of the data it was trained on and the weighted values and biases of each of its billions of connections. These models go through extensive fine-tuning and output filtering to prevent them from answering certain questions, like ones regarding unethical or illegal activities.
 
+These Assistants have become the Vanguard of the AI-Explosion, with everyone from students to researchers and everything inbetween using them for a smorgasbord of tasks.
+
 <a id="assistant-notes"></a>
 
 #### Notes regarding AI assistants
