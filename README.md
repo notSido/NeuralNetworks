@@ -33,7 +33,8 @@ The factor most responsible for the rapid evolution of neural networks into the 
 
 Today, Machine Learning is a widely adopted technology, powering everything from Instagram's and YouTube's suggestion algorithms, to the computer vision and pathfinding models behind navigation apps like Google Maps and Yandex Maps. Other notable use cases include audio processing models which remove background noise from audio (like Krisp, used by discord and nvidia Broadcast which works as a virtual input device) and computer vision models specialised for facial recognition, which is the technology powering snapchat's facial filters.
 
-## The Advent of Generative AI
+## 1.2 The Advent of Generative AI
+### 1.2.1 The Big (Generative AI) Bang
 The beginning of the 2020s saw a boom in the popularity of AI Generative AI models, with Models like OpenAI's DALL-E and ChatGPT, Meta's (formerly Facebook) LLaMA (among others) becoming household names. Their explosive rise to fame can be attributed to a long list of factors, including but not limited to:
 
 1. High performance
@@ -45,39 +46,50 @@ As mentioned previously, machine learning models have been a part of our daily l
 
 Regarding availability: Never before have Generative AI models been as easily accessible as today, with OpenAI's ChatGPT 3.5 being available for no cost at all as an example. Consumers are even given the option of running Generative AI models on their own machines, with [Ollama](https://www.ollama.com) being a popular option for storing, running, and interacting with many text-to-text models on your own machine. With many being compact enough to run very well on Laptops with no need for a GPU, Meta's LLaMA 2 being a perfect example thereof.
 
-### LLMs and GPTs
+### 1.2.2 LLMs and GPTs
 I will focus on LLMs (Large Language Models) like ChatGPT (Chat Generative Pre-trained Transformer) and LLaMA (Large Language Model Meta AI) for this section, as they are the most popular at the moment. For extra clarification, these models and others, like StableDiffusion based models and DALL-E, belong to the Generative AI group of AI models. As the name implies, they exist to generate an output based on an input. ChatGPT and LLaMA are text-to-text models, meaning they generate output in the form of text from a text input. StableDiffusion and DALL-E models generate an image based on text input, making them text-to-image models.
 
-### Text-to-text Models and the birth of the AI assistant
-Text-to-text LLMs exist to do one thing, predict to the best of their ability the word most likely to appear next in a sequence of words given to them as an Input, which is split into individual tokens. Each token has its own embedding value, with related words having embedding values close to each other. This can be visualised in a 3D space using vectors [like I've done in this python notebook](https://colab.research.google.com/drive/1s4KNZgQsfOAxdo0wteSfJUTYylRVH7l3?usp=sharing).
+### 1.2.3 Text-to-text Models and the birth of the AI assistant
+Text-to-text LLMs exist to do one thing, predict to the best of their ability the word most likely to appear next in a sequence of words given to them as an Input, which is split into individual tokens. Each token has its own embedding value, with related words having embedding values close to each other. This allows LLMs to associate words with each other without understanding their inherent meaning, more on this in [the notes on this section](#LLM-sentience). This can be visualised in a 3D space using vectors [like I've done in this python notebook](https://colab.research.google.com/drive/1s4KNZgQsfOAxdo0wteSfJUTYylRVH7l3?usp=sharing).
 
 ![3D visualisation of vectors](embeddings-output.png)
 
-Using some creative prompt engineering, one can make the model act as a virtual assistant:
+*please note that these embedding values are not accurate at all, and the values were adjusted to make them easier to see, a real dictionary of embedding values would be **massive** and difficult to interpret visually. This is just a representation of what embedding values **might** look like.*
+
+[*same thing in desmos if you want to move the view around*](https://www.desmos.com/3d/3216881974)
+
+#### AI Assistants
+
+Using some creative prompt engineering, one can make LLMs act as a virtual assistant:
 
 *User: How can I convert a column of data in a pandas dataframe to their product of the sigmoid function?*
 
 *Assistant:*
 
-With this Prompt, the model does not pretend to be an assistant, instead it attempts to predict how this imaginary conversation between a user and assistant *could* unfold by predicting which words are most likely to follow. It guesses which word is most likely to come next in accordance with its training, which consists of the data it was trained on and the weighted values and biases of each of its billions of parameters. These models go through extensive fine-tuning and output filtering to prevent them from answering certain questions, like ones regarding unethical or illegal activities.
+With this Prompt, the model does not pretend to be an assistant, instead it attempts to predict how this imaginary conversation between a user and assistant *could* unfold by predicting which words are most likely to follow, using *Assistant:* as a starting point. Very similar to how character's lines are written out in plays. It guesses which word is most likely to come next in accordance with its training, which consists of the data it was trained on and the weighted values and biases of each of its billions of connections. These models go through extensive fine-tuning and output filtering to prevent them from answering certain questions, like ones regarding unethical or illegal activities.
 
-### Notes regarding AI assistants
-These models are not without their flaws, and some of their most notable shortcomings include their eagerness to be as helpful as possible, and a lack of assertiveness. Their lack of assertiveness just stems from their training-goal of being as respectful and helpful as possible, this makes it easy to gaslight some LLMs into believing something that's factually incorrect or goes against the information it was trained on, which leads to some humours screenshots of conversations often shared on reddit and other platforms.
+<a id="assistant-notes"></a>
 
-Most AI assistants, depending on how the question is posed and what led up to the prompt, will experience so called ***hallucinations***. These appear most commonly when the model is handed a prompt it's not equipped to handle, often due to a lack of training data on the topic at hand. However, due to their training and fine-tuning, they will often attempt to provide a response with the data that the model *has* been trained on, which results in an inaccurate or factually incorrect response at best, and complete gibberish at worst. This is what the warning below the prompt field of [ChatGPT's chat window](https://chat.openai.com) alludes to.
+#### Notes regarding AI assistants
+These models are not without their flaws, and some of their most notable shortcomings include their eagerness to be as helpful as possible, and a lack of assertiveness. 
 
+Their lack of assertiveness just stems from their training-goal of being as respectful and helpful as possible, this makes it easy to gaslight some LLMs into "believing" something that's factually incorrect or goes directly against the information it was trained on, which leads to some humours screenshots of conversations often shared on reddit and other platforms. 
 
+It is also important to note that LLMs are not sentient, meaning they *do not understand* any of the text you feed them as input or the text they return as the output, nor are they capable of understanding logic and reason. <a id="LLM-sentience"></a>
 
-
-
-
-
-
+Most AI assistants, depending on the prompt and what led up to the prompt, will sometimes experience so called ***hallucinations***. These appear most commonly when the model is handed a prompt it's not equipped to handle, often due to a lack of training data on the topic at hand. However, due to their training and fine-tuning, they will often attempt to provide a response with the data that the model *has* been trained on, which results in an inaccurate or factually incorrect response at best, and complete gibberish at worst. This is what the warning below the prompt field of [ChatGPT's chat window](https://chat.openai.com) alludes to.
 
 
 
----
-###### *sources and references*
+
+
+
+
+
+
+
+
+
 
 [^1]: [*McCulloch, W. S., & Pitts, W. (1943). A Logical Calculus of the Ideas Immanent in Nervous Activity. Bulletin of Mathematical Biophysics, 5(4), 115-133*](https://home.csulb.edu/~cwallis/382/readings/482/mccolloch.logical.calculus.ideas.1943.pdf)
 
