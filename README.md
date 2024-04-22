@@ -29,7 +29,66 @@ The introduction of ADALINE marked a crucial milestone in the evolution of neura
 In 1962, **Bernard Widrow** with a team consisting of his students at Stanford University introduced another groundbreaking neural network model named "MADALINE"[^6] (Multiple Adaptive Linear Neurons). Building upon the foundation laid by ADALINE, MADALINE represented a significant advancement in the field of neural network research. Unlike its predecessor, which consisted of a single layer of neurons, MADALINE featured multiple layers of adaptive linear neurons, arranged in a hierarchical fashion. This architectural innovation allowed MADALINE to capture more complex patterns and relationships in the input data, making it suitable for a wider range of classification tasks. By incorporating multiple layers of adaptive neurons, MADALINE demonstrated enhanced flexibility and discriminative power, enabling it to tackle challenging classification problems that were beyond the capabilities of single-layer models like the perceptron and ADALINE. The introduction of MADALINE marked a pivotal moment in the evolution of neural network research, laying the groundwork for the development of deeper and more powerful neural network architectures in the years to come.
 
 ### 1.1.3 Transition to the era of modern neural networks
-The factor most responsible for the rapid evolution of neural networks into the marvels of computer science we know today, is the identically rapid development of processor technology, with the GPU (Graphics Processing Unit) and its unrivalled ability to perform a massive amount of simultaneous calculations being the lifeblood of the Artifical Intelligence Models that we use today, with other revolutionary discoveries in the fields of Mathematics, Computer Science, and microprocessor manufacturing proving themselves to be the key to the recent advancements in computing technology.
+The factor most responsible for the rapid evolution of neural networks into the marvels of computer science we know today, is the identically rapid development of processor technology, with the GPU (Graphics Processing Unit) and its unrivalled ability to perform a massive amount of simultaneous calculations being the lifeblood of the Artifical Intelligence Models that we use today, with other revolutionary discoveries in the fields of Mathematics, Computer Science, and microprocessor manufacturing proving themselves to be the main driving factor of the recent advancements in computing technology.
+
+Today, Machine Learning is a widely adopted technology, powering everything from Instagram's and YouTube's suggestion algorithms, to the computer vision and pathfinding models behind navigation apps like Google Maps and Yandex Maps. Other notable use cases include audio processing models which remove background noise from audio (like Krisp, used by discord and nvidia Broadcast which works as a virtual input device) and computer vision models specialised for facial recognition, which is the technology powering snapchat's facial filters.
+
+## The AI boom
+The beginning of the 2020s saw a boom in the popularity of AI Models, with Models like OpenAI's DALL-E and ChatGPT, Meta's (formerly Facebook) LLaMA others becoming household names known to most people. Their explosive rise in popularity can be attributed to a long list of factors, including but not limited to:
+
+1. High performance
+2. Extensive training
+3. Ease of interaction
+4. Availability
+
+As mentioned previously, machine learning models have been a part of our daily lives for a while now, but they were never the primary attraction or product of any given platform or application developed for use by the general population. With the rise of Natural Language Processing Models, people were now able to interact directly with Machine Learning models with little abstraction, and more importantly, their ability to process natural language made them available to an enormous amount of people because they no longer required any programming expertise. These advancements allowed these models to go from working in the background for the sake of supporting an application or completing a specific task, to being the main product which can be used to perform a variety of tasks which can be completed using natural language. Note: programming is not natural language, but LLMs can easily be trained on code as well.
+
+I will focus on LLMs (Large Language Models) like ChatGPT (Chat Generative Pre-trained Transformer) and LLaMA (Large Language Model Meta AI) for this section, as they are the most popular at the moment. For extra clarification, these models and others, like StableDiffusion based models and DALL-E, belong to the Generative AI group of AI models. Like the name might suggest, they exist to generate an output based on an input. ChatGPT and LLaMA are text-to-text models, meaning they generate output in the form of text generated from a text input. StableDiffusion and DALL-E models generate an image based on text input, making them text-to-image models.
+
+Text-to-text LLMs exist to do one thing, predict to the best of their ability the word most likely to appear next in a sequence of words given to them as an Input, which is split into individual tokens. Each token has its own value (known as an embedding), with related words having values close to each other. This can be visualized in a 3D space using vectors:
+
+```Python
+import numpy as np
+import matplotlib.pyplot as plt
+
+embeddings = {
+    "dog": [0.5, 0.3, -0.2],
+    "cat": [0.4, 0.2, -0.3],
+    "car": [-0.1, 0.6, 0.4],
+    "bike": [-0.2, 0.7, 0.5]
+}
+
+# Extract words and embeddings
+words = list(embeddings.keys())
+vectors = np.array([embeddings[word] for word in words])
+
+# Plot the 3D visualization
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(111, projection='3d')
+
+for word, vector in zip(words, vectors):
+    ax.text(vector[0], vector[1], vector[2], word)
+
+ax.set_xlabel('Dimension 1')
+ax.set_ylabel('Dimension 2')
+ax.set_zlabel('Dimension 3')
+
+plt.show()
+```
+
+
+Using some creative prompt engineering, one can make the model act as a virtual assistant:
+
+*User: How can I convert a column of data in a pandas dataframe to their product of the sigmoid function?*
+
+*Assistant:*
+
+With this Prompt, the model does not pretend to be an assistant, instead it attempts to predict how this imaginary conversation between a user and assistant *could* unfold by predicting which words are most likely to follow. It guesses which word is most likely to come next in accordance with its training, which consists of the data it was trained on and the weighted values and biases of each of its billions of parameters. These models go through extensive fine-tuning and output filtering to prevent them from answering certain questions, like ones regarding unethical or illegal activities.
+
+### Notes regarding AI assistants
+These models are not without their flaws, and some of their most notable shortcomings include their eagerness to be as helpful as possible, and a lack of assertiveness. Their lack of assertiveness just stems from their training-goal of being as respectful and helpful as possible, this makes it easy to gaslight some LLMs into believing something that's factually incorrect or goes against the information it was trained on, which leads to some humours screenshots of conversations often shared on reddit and other platforms.
+
+Most AI assistants, depending on how the question is posed and what led up to the prompt, will experience so called ***hallucinations***. These appear most commonly when the model is handed a prompt it's not equipped to handle, often due to a lack of training data on the topic at hand. However, due to their training and fine-tuning, they will often attempt to provide a response with the data that the model *has* been trained on, which results in an inaccurate or factually incorrect response at best, and complete gibberish at worst. This is what the warning below the prompt field of [ChatGPT's chat window](https://chat.openai.com) alludes to.
 
 
 
