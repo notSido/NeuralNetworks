@@ -95,12 +95,12 @@ Most AI assistants, depending on the prompt and what led up to the prompt, will 
 
 [^1]: [*McCulloch, W. S., & Pitts, W. (1943). A Logical Calculus of the Ideas Immanent in Nervous Activity. Bulletin of Mathematical Biophysics, 5(4), 115-133*](https://home.csulb.edu/~cwallis/382/readings/482/mccolloch.logical.calculus.ideas.1943.pdf)
 
-[^2]: [Neural Network Conceptual Diagram](https://www.researchgate.net/publication/323465059/figure/fig2/AS:599207769554946@1519873673906/McCulloch-Pitts-computational-model-of-a-neuron.png)
+[^2]: [*Neural Network Conceptual Diagram*](https://www.researchgate.net/publication/323465059/figure/fig2/AS:599207769554946@1519873673906/McCulloch-Pitts-computational-model-of-a-neuron.png)
 
-[^3]: [Hebb, D. O. (1949). The Organization of Behavior. Wiley & Sons](https://pure.mpg.de/rest/items/item_2346268_3/component/file_2346267/content)
+[^3]: [*Hebb, D. O. (1949). The Organization of Behavior. Wiley & Sons*](https://pure.mpg.de/rest/items/item_2346268_3/component/file_2346267/content)
 
-[^4]: [Hebbian theory wikipedia page](https://en.wikipedia.org/wiki/Hebbian_theory#:~:text=The%20theory%20attempts%20to%20explain,for%20education%20and%20memory%20rehabilitation)
+[^4]: [*Hebbian theory wikipedia page*](https://en.wikipedia.org/wiki/Hebbian_theory#:~:text=The%20theory%20attempts%20to%20explain,for%20education%20and%20memory%20rehabilitation)
 
-[^5]: [Perceptron neural network](https://en.wikipedia.org/wiki/Perceptron)
+[^5]: [*Perceptron neural network*](https://en.wikipedia.org/wiki/Perceptron)
 
-[^6]: [ADALINE and MADALINE neural networks](https://en.wikipedia.org/wiki/ADALINE/)
+[^6]: [*ADALINE and MADALINE neural networks*](https://en.wikipedia.org/wiki/ADALINE/)
